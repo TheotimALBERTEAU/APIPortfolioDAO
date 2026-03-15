@@ -6,6 +6,9 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
+const skillsRouter = require('./routes/skills-routes');
+app.use('/skills', skillsRouter);
+
 if (process.env.DB_MODE === 'mongoose') {
     require('./dao/mongoose/connection').connect_mongoose();
 }
