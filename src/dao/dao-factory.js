@@ -11,5 +11,12 @@ module.exports = {
             const DAOProjectsMongoose = require(`./mongoose/daoprojects-mongoose`);
             return new DAOProjectsMongoose();
         }
+    },
+
+    getDAOExperiences: () => {
+        if (process.env.DB_MODE === 'mongoose') {
+            const DAOExperiencesMongoose = require(`./mongoose/daoexperiences-mongoose`);
+            return new DAOExperiencesMongoose();
+        }
     }
 }
