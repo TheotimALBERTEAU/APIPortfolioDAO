@@ -15,6 +15,9 @@ app.use('/projects', projectsRouter);
 const experiencesRouter = require('./routes/experiences-routes');
 app.use('/experiences', experiencesRouter);
 
+const educationsRouter = require('./routes/educations-routes');
+app.use('/education', educationsRouter);
+
 if (process.env.DB_MODE === 'mongoose') {
     require('./dao/mongoose/connection').connect_mongoose();
 }
