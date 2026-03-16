@@ -4,7 +4,7 @@ module.exports = {
     getAll: async () => {
         try {
             const Experiences = await DAOFactory.getDAOExperiences().selectAll();
-            return {code : "200", message : "Showing all Experiences", data : Experiences};
+            return {code : 200, message : "Showing all Experiences", data : Experiences};
         } catch (error) {
             return {code: "530", message : "Error while obtaining experiences", data : error};
         }
