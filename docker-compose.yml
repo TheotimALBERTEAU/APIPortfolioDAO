@@ -2,4 +2,8 @@ version: '3'
 services:
   portfolio_api_node:
     build: .
+    env_file:
+      - .env
     container_name: apiportofoliodao-app-1
+    ports:
+      - "3000:3000"
