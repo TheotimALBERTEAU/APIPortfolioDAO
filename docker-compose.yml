@@ -1,9 +1,11 @@
 version: '3'
 services:
-  portfolio_api_node:
+  app:
     build: .
+    container_name: apisiteperso-app-1
+    volumes:
+      - .:/usr/src/app
+    environment:
+      NODE_ENV: production
     env_file:
       - .env
-    container_name: apiportofoliodao-app-1
-    ports:
-      - "3000:3000"

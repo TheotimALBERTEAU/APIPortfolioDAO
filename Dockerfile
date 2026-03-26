@@ -1,7 +1,20 @@
-FROM node:20-slim
-WORKDIR /app
+# Utilisation de la version précise de Node
+FROM node:22.12.0-alpine
+
+# Dossier de travail dans le conteneur
+WORKDIR /usr/src/app
+
+# Copie des fichiers de configuration des dépendances
 COPY package*.json ./
-RUN npm install
+
+# Installation des dépendances (sans les outils de dev pour plus de légèreté)
+RUN npm install --omit=dev
+
+# Copie de tout le code source (routes, models, db, etc.)
 COPY . .
+
+# Ton API écoute probablement sur le port 3000
 EXPOSE 3000
-CMD ["node", "src/app.js"]
+
+# Lancement de l'application
+CMD [ "node", "src/app.js" ]
