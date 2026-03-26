@@ -20,3 +20,5 @@ Thumbs.db
 # Sonar
 sonar-project.properties
 .scannerwork
+
+docker-compose.override.yml
