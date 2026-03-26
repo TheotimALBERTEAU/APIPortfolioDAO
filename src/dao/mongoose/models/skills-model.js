@@ -6,7 +6,6 @@ const Skill = mongoose.model(
         title: String,
         skills:[{
             subtitle: String,
-            percent: Number,
             logoPath: String
         }]
     },
